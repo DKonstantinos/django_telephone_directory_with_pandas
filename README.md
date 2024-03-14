@@ -1,0 +1,1 @@
+This Django project allows users to upload an ODS file containing phone directory entries. The file must have three columns: "first name", "last name", and "telephone number". Valid entries are added to the directory, and the user is redirected to a page displaying all entries.
