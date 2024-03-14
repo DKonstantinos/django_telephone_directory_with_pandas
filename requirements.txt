@@ -1,0 +1,4 @@
+Django==4.2.11
+odfpy==1.4.1
+pandas==2.0.3
+

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Telephone directory
+{% endblock %}
+
+{% block main %}
+<h1>Telephone directory</h1>
+{% if not all_telephone_numbers %}
+The telephone directory is empty. If you wish to add some telephone numbers please click on the button below.
+{% endif %}
+ <ul>
+    {% for t in all_telephone_numbers %}
+    <li>{{t.first_name}} {{t.last_name}} : {{t.telephone_number}}</li>
+    {% endfor %}
+ </ul>
+
+ <a href="{% url 'submit_form' %}">
+   <button type="button" class="btn btn-primary">
+      Submit a file
+   </button>
+ </a>
+ 
+{% endblock %}

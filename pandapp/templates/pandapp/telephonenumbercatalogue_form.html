@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+Submit a file
+{% endblock %}
+
+{% block main %}
+<h1>File submission</h1>
+The ods file submitted should contain three columns : "first name", "last name" and "telephone number".
+If it is not the case the ods file's telephone numbers will not be added to the telephone directory.
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <p>
+            <label for="id_ods_file">ods file:</label>
+            <input type="file" name="ods_file" required="" id="id_ods_file" class="form-control">
+        </p>
+
+        <button type="submit" class="btn btn-dark" >Submit your ods file</button>
+    </form>
+
+    <br><br>
+
+    <a href="{% url 'catalogue' %}">
+        <button type="button" class="btn btn-primary">
+            Telephone directory
+        </button>
+    </a>
+{% endblock %}
